@@ -42,3 +42,28 @@ The two queries and the graphical execution plans. Explain any differences and t
 In the stackexchange forum for coffee (coffee.stackexchange.com), write a query which return the displayName and title of all posts which with the word `grounds`in the title.
 
 > If you want to challenge yourself a bit, use the ubuntu stackexchange instead, and search for `grep` rather than `grounds` in this and exercise 5.
+
+
+### Hand-in:
+* Hand in the query. Show the execution plan for the query (if you cannot get the graphical, show the tabular).
+* Document that there is no real cost to the join to get the display name instead of just the userid. You can do that by running an other query with no join and then show that there is no major difference.
+
+### Review:
+* Are you able to verify there is no major difference?
+* Do you agree with the explanation?
+* If you find the explanation good or bad - say so, and be constructive.
+
+## Exercise 5
+Add a full text index to the `posts` table and change the query from exercise 4 so it no longer scans the entire `posts` table. 
+
+### Hand-in:
+* the revised query
+* the sql needed to add your index
+	* in particular your choice between a "natural language" full-text search and a "boolean" full-text search.
+* documentation of efficiency in the form of an execution plan
+
+### Review:
+* Are you able to reproduce the difference?
+* Do you belive this is the optimal query?
+* If you belive you have a better solution, say so - and be constructive.
+
