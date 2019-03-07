@@ -2,15 +2,20 @@
 ## Excercise 1
 
 In the `classicmodels` database, write a query that picks out those customers who are in the same city as office of their sales representative.
-
-### Hand-in:
-Insert into the readme file: the query and the graphical execution plan which can be obtained from the query. Explain what is the main performance problem for this query. Do not try to optimize the database for this query (yet).
-
-### Review:
-* Are you able to use the query?
-* Do you have the same explanation?
-* If you find the explanation good or bad - say so, and be constructive.
-
+>
+use classicmodels;
+with bigtable as (
+  select customers.customerNumber, customers.city
+  from offices, orders, customers, employees
+  where orders.customerNumber = customers.customerNumber and
+    customers.salesRepEmployeeNumber = employees.employeeNumber and
+    employees.officeCode = offices.officeCode
+)
+select city, count(city) as total
+from bigtable
+group by customerNumber
+order by total DESC;
+>
 ## Exercise 2
 Change the database schema so that the query from exercise get better performance. 
 
