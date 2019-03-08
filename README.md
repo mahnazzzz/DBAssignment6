@@ -4,18 +4,7 @@
 In the `classicmodels` database, write a query that picks out those customers who are in the same city as office of their sales representative.
 
 ```sh
- use classicmodels;
- with bigtable as (
-  select customers.customerNumber, customers.city
-  from offices, orders, customers, employees
-  where orders.customerNumber = customers.customerNumber and
-    customers.salesRepEmployeeNumber = employees.employeeNumber and
-    employees.officeCode = offices.officeCode
- )
- select city, count(city) as total
- from bigtable
- group by customerNumber
- order by total DESC;
+
 ```
 
 
