@@ -55,10 +55,10 @@ GROUP BY e.officeCode;
 ```
 ### b
 ```sh
-SELECT 
+SELECT distinct 
     e.officeCode ,  
-    sum(p.amount) OVER (PARTITION BY e.officeCode) as totalAmountPerOffice,
-    sum(od.quantityOrdered)  OVER (PARTITION BY e.officeCode) as amountOFOrder
+    sum(od.quantityOrdered * od.priceEach) OVER (PARTITION BY e.officeCode) as totalSoldEachOffice,
+    max(od.priceEach)  OVER (PARTITION BY e.officeCode) as maxPriceofOrderEachOffice
    FROM
     orderdetails as od
     INNER JOIN
@@ -68,7 +68,7 @@ SELECT
     INNER JOIN
     payments AS p ON p.customerNumber= o.customerNumber
     INNER JOIN
-    employees AS e ON c.salesRepEmployeeNumber = e.employeeNumber ;  
+    employees AS e ON c.salesRepEmployeeNumber = e.employeeNumber ;    
 ```
 
 ## Exercise 4
@@ -83,5 +83,7 @@ Add a full text index to the `posts` table and change the query from exercise 4 
 
 #### Befor 
 ![image](https://user-images.githubusercontent.com/20173643/54080238-bac91980-42eb-11e9-9390-374fbe9e1a1d.png)
+
+efter is not done
 
 
