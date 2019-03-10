@@ -74,7 +74,8 @@ SELECT
 ## Exercise 4
 In the stackexchange forum for coffee (coffee.stackexchange.com), write a query which return the displayName and title of all posts which with the word `grounds`in the title.
 ```sh
-SELECT p.Id, p.Title, u.id, u.DisplayName FROM posts as p inner JOIN users as u where p.Title LIKE '%grounds%' group by p.Id;
+select  p.Title, u.id, u.DisplayName FROM posts as p inner JOIN users as u  on p.OwnerUserId = u.id 
+where p.Title LIKE '%grounds%' group by u.id ;
 ```
 ## Exercise 5
 Add a full text index to the `posts` table and change the query from exercise 4 so it no longer scans the entire `posts` table. 
