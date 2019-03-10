@@ -80,4 +80,7 @@ where p.Title LIKE '%grounds%' group by u.id ;
 ## Exercise 5
 Add a full text index to the `posts` table and change the query from exercise 4 so it no longer scans the entire `posts` table. 
 
+#### Befor 
+![image](https://user-images.githubusercontent.com/20173643/54080238-bac91980-42eb-11e9-9390-374fbe9e1a1d.png)
+
 
