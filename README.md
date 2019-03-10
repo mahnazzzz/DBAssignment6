@@ -77,6 +77,7 @@ In the stackexchange forum for coffee (coffee.stackexchange.com), write a query 
 select  p.Title, u.id, u.DisplayName FROM posts as p inner JOIN users as u  on p.OwnerUserId = u.id 
 where p.Title LIKE '%grounds%' group by u.id ;
 ```
+Find exemple [her](https://stackoverflow.com/questions/2526772/search-for-string-within-text-column-in-mysql)
 ## Exercise 5
 Add a full text index to the `posts` table and change the query from exercise 4 so it no longer scans the entire `posts` table. 
 
