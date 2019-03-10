@@ -18,7 +18,7 @@ SELECT
     INNER JOIN customers as c ON c.city= o.city
 GROUP BY c.customerNumber;
 ```
-
+![3](https://user-images.githubusercontent.com/20173643/54080006-bbf84780-42e7-11e9-95ac-debf493d02e7.PNG)
 
 ## Exercise 2
 Change the database schema so that the query from exercise get better performance. 
