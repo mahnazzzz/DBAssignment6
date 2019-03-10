@@ -40,7 +40,7 @@ b) using windowing
 ### a
 ```sh
 SELECT 
-    e.officeCode, SUM(od.priceEach) AS totalPaid, max(p.amount) as maximumPrice
+    e.officeCode, SUM(od.priceEach) AS totalPaid, max(od.priceEach) as maximumPrice
    FROM
     orderdetails as od
     INNER JOIN
