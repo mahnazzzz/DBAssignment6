@@ -22,6 +22,10 @@ GROUP BY c.customerNumber;
 
 ## Exercise 2
 Change the database schema so that the query from exercise get better performance. 
+create Index on city in customers
+
+### Befor 
+![alt text]()
 
 ## Exercise 3
 We want to find out how much each office has sold and the max single payment for each office. Write two queries which give this information
