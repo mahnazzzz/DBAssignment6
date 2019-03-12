@@ -4,14 +4,10 @@
 In the `classicmodels` database, write a query that picks out those customers who are in the same city as office of their sales representative.
 
 ```sh
-SELECT 
-    c.customerNumber, c.city, o.officeCode, o.city
-   FROM
+SELECT c.customerNumber, c.city, o.officeCode, o.city FROM
     employees AS e
-        INNER JOIN
-    offices AS o ON e.officeCode=o.officeCode
-    INNER JOIN customers as c ON c.city= o.city
-GROUP BY c.customerNumber;
+    INNER JOIN offices AS o ON e.officeCode=o.officeCode
+    INNER JOIN customers as c ON c.city= o.city GROUP BY c.customerNumber;
 ```
 ![3](https://user-images.githubusercontent.com/20173643/54080006-bbf84780-42e7-11e9-95ac-debf493d02e7.PNG)
 
