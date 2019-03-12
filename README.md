@@ -4,11 +4,6 @@
 In the `classicmodels` database, write a query that picks out those customers who are in the same city as office of their sales representative.
 
 ```sh
-select  officeAndCustomersT.customerNumber
-from officeAndCustomersT
-group by customerNumber
-order by customers.city DESC;
-
 SELECT 
     c.customerNumber, c.city, o.officeCode, o.city
    FROM
